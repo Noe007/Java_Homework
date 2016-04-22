@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
+  <children>
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#99f3ff" height="372.0" layoutX="14.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="572.0" />
+    <Rectangle arcHeight="5.0" arcWidth="5.0" height="75.0" layoutX="14.0" layoutY="35.0" opacity="0.24" stroke="BLACK" strokeType="INSIDE" strokeWidth="4.4" width="572.0">
+      <fill>
+        <Color blue="1.000" green="0.161" red="0.000" fx:id="x1" />
+      </fill>
+    </Rectangle>
+    <Label layoutX="60.0" layoutY="45.0" prefHeight="48.0" prefWidth="447.0" text="Phone Company">
+      <font>
+        <Font size="40.0" />
+      </font>
+    </Label>
+    <Label layoutX="61.0" layoutY="123.0" text="PLAN A:  Daytime (6:00 a.m. through 5:59 p.m.)    $0.07" />
+    <Label layoutX="61.0" layoutY="155.0" text="PLAN B:  Evening (6:00 p.m. through 11:59 p.m.)   $0.12" />
+    <Label layoutX="59.0" layoutY="184.0" text="PLAN C:  Off-Peak (12:00 a.m. through 5:59 a.m.)   $0.05" />
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="$x1" height="168.0" layoutX="36.0" layoutY="209.0" opacity="0.24" stroke="BLACK" strokeType="INSIDE" strokeWidth="4.4" width="539.0" />
+    <Label layoutX="77.0" layoutY="251.0" text="Hi Noe!">
+      <font>
+        <Font size="50.0" />
+      </font>
+    </Label>
+    <RadioButton fx:id="planA" layoutX="379.0" layoutY="251.0" mnemonicParsing="false" text="Plan A" />
+    <RadioButton fx:id="planB" layoutX="379.0" layoutY="277.0" mnemonicParsing="false" text="Plan B" />
+    <RadioButton fx:id="planC" layoutX="379.0" layoutY="302.0" mnemonicParsing="false" text="Plan C" />
+    <TextField fx:id="minutes" layoutX="364.0" layoutY="326.0" prefWidth="200.0" />
+    <Label layoutX="307.0" layoutY="326.0" text="Minutes:" />
+    <Label layoutX="394.0" layoutY="224.0" text="Select your Plan">
+      <font>
+        <Font size="20.0" />
+      </font>
+    </Label>
+    <Label layoutX="59.0" layoutY="331.0" text="Your Total:">
+      <font>
+        <Font size="25.0" />
+      </font>
+    </Label>
+    <Label fx:id="total" layoutX="180.0" layoutY="342.0" text="0.00">
+      <font>
+        <Font size="15.0" />
+      </font>
+    </Label>
+    <Button fx:id="summit" layoutX="479.0" layoutY="355.0" mnemonicParsing="false" onAction="#process" text="Summit" />
+  </children>
+</AnchorPane>
