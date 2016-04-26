@@ -1,15 +1,14 @@
 package sample;
 
 
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
+
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
 
 
 public class Controller {
@@ -37,29 +36,53 @@ public class Controller {
 
     @FXML
     private Label total;
-/*
+
+    ToggleGroup group = new ToggleGroup();
+
     @FXML
+    void initialize() {
 
-    public void  process(ActionEvent event){
-        System.out.println("hi");
-
-        if(planA.selectedProperty().get()){
-System.out.println("hi a");
-
-
- }else if(planB.selectedProperty().get()){
-
- }else if(planB.selectedProperty().get()){
-
- }else{
-     //Todo: let the user known that she hasn't specify a tottle
- }
+        planA.setToggleGroup(group);
+        planB.setToggleGroup(group);
+        planC.setToggleGroup(group);
 
     }
-*/
 
     @FXML
     void process(ActionEvent event) {
+        RadioButton selectedToggle = (RadioButton) group.getSelectedToggle();
+        //to change to two decimal points
+
+        switch (selectedToggle.getId()){
+//Promt user with the total of their
+            case "planA":
+                STATP(0.07);
+                break;
+            case "planB":
+                STATP(0.12);
+                break;
+            case "planC":
+                STATP(0.05);
+                break;
+
+            default:
+            /*
+           Todo: do something by default like a fix price by default or something
+             */
+                break;
+        }
+
     }
 
+    public void STATP(Double charge){
+       // Set Text Accounrding To Plan (STATP)
+        DecimalFormat df = new DecimalFormat("#.##");
+        total.setText("$" + df.format((
+                charge * Double.parseDouble(minutes.getText()
+
+                )
+
+        )));
+
+    }
 }
